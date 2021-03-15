@@ -123,13 +123,13 @@ public class IntegerList {
             mid = (min+max) / 2;
             if (target == list[mid])
                 loc = mid;
-            else
-            if (target < list[mid])
-                max = mid-1;
-            else
-                min = mid+1;
+            else {
+                if (target > list[mid])
+                    max = mid-1;
+                else
+                    min = mid+1;
+            }
         }
-        
         return loc;
     }
 }

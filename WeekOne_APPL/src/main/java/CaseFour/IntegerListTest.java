@@ -83,6 +83,15 @@ public class IntegerListTest {
             case 7:
                 list.sortDecreasing();
                 break;
+            case 8:
+                System.out.print("Enter the value to look for: ");
+                loc = list.binarySearchD(scan.nextInt());
+                if (loc != -1) {
+                    System.out.println("Found at location " + loc);
+                } else {
+                    System.out.println("Not in list");
+                }
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -102,6 +111,7 @@ public class IntegerListTest {
         System.out.println("5: Replace a value");
         System.out.println("6: Replace all value");
         System.out.println("7: Sort the list in descending order");
+        System.out.println("8: Find an element in the list using binary search");
         System.out.print("\nEnter your choice: ");
     }
     
