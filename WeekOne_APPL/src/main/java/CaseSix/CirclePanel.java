@@ -25,6 +25,7 @@ public class CirclePanel extends JPanel {
     private final int CIRCLE_SIZE = 50;
     private int x, y;
     private Color c;
+    JButton choose = new JButton("Choose Color");
     //---------------------------------------------------------------
     // Set up circle and buttons to move it.
     //---------------------------------------------------------------
@@ -55,6 +56,12 @@ public class CirclePanel extends JPanel {
         blue.addActionListener(new ColorListener(Color.blue));
         yellow.addActionListener(new ColorListener(Color.yellow));
         green.addActionListener(new ColorListener(Color.green));
+        choose.addActionListener(new ColorListener(null));
+        // Change background color of buttons
+        red.setBackground(Color.red);
+        blue.setBackground(Color.blue);
+        yellow.setBackground(Color.yellow);
+        green.setBackground(Color.green);
         // Need a panel to put the buttons on or they'll be on
         // top of each other.
         JPanel buttonPanel = new JPanel();
@@ -65,6 +72,7 @@ public class CirclePanel extends JPanel {
         buttonPanel.add(down);
         colorButtonPanel.add(red);
         colorButtonPanel.add(blue);
+        colorButtonPanel.add(choose);
         colorButtonPanel.add(yellow);
         colorButtonPanel.add(green);
         // Add the button panel to the bottom of the main panel
@@ -116,7 +124,11 @@ public class CirclePanel extends JPanel {
         }
         
         public void actionPerformed(ActionEvent e) {
-            c = this.color;
+            if(this.color == null){
+                c = JColorChooser.showDialog(choose, "Choose your color!", c);
+            } else {
+                c = this.color;
+            }
             repaint();
         }
     }
