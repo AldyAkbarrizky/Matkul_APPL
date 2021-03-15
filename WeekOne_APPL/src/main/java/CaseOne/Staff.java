@@ -23,7 +23,7 @@ public class Staff {
 //-----------------------------------------------------------------
 
     public Staff() {
-        staffList = new StaffMember[6];
+        staffList = new StaffMember[8];
         staffList[0] = new Executive("Sam", "123 Main Line",
                 "555-0469", "123-45-6789", 2423.07);
         staffList[1] = new Employee("Carla", "456 Off Line",
@@ -36,8 +36,16 @@ public class Staff {
                 "555-8374");
         staffList[5] = new Volunteer("Cliff", "321 Duds Lane",
                 "555-7282");
+        staffList[6] = new Commission("Aldy", "26 Cimahi",
+                "0851-5623", "018-10-2000", 6.25, 0.2);
+        staffList[7] = new Commission("Argonaut", "14 Contong",
+                "0851-0293", "010-12-2001", 9.75, 0.15);
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
+        ((Commission) staffList[6]).addHours(35);
+        ((Commission) staffList[6]).addSales(400);
+        ((Commission) staffList[7]).addHours(40);
+        ((Commission) staffList[7]).addSales(950);
     }
 //-----------------------------------------------------------------
 // Pays all staff members.
