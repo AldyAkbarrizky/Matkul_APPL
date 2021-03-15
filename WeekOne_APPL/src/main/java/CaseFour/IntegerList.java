@@ -87,4 +87,14 @@ public class IntegerList {
             list[loc] = newVal;
         }
     }
+    
+    void replaceAll(int oldVal, int newVal) {
+        int location = -1;
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == oldVal) {
+                location = i;
+                list[location] = newVal;
+            }
+        }
+    }
 }

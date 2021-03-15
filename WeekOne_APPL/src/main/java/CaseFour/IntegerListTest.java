@@ -73,6 +73,13 @@ public class IntegerListTest {
                 newVal = scan.nextInt();
                 list.replaceFirst(oldVal, newVal);
                 break;
+            case 6:
+                System.out.print("Enter the value to look for: ");
+                oldVal = scan.nextInt();
+                System.out.print("Enter the new value: ");
+                newVal = scan.nextInt();
+                list.replaceAll(oldVal, newVal);
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -90,6 +97,7 @@ public class IntegerListTest {
         System.out.println("3: Find an element in the list using linear search");
         System.out.println("4: Print the list");
         System.out.println("5: Replace a value");
+        System.out.println("6: Replace a value");
         System.out.print("\nEnter your choice: ");
     }
 }
