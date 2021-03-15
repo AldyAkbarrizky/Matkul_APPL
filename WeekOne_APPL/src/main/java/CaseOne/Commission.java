@@ -18,7 +18,6 @@ public class Commission extends Hourly {
             String socSecNumber, double rate, double com_rate) {
         super(eName, eAddress, ePhone, socSecNumber, rate);
         commission_rate = com_rate;
-        total_sales = 0;
     }
     
     public void addSales(double totalSales) {
