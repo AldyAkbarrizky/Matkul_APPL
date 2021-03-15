@@ -97,4 +97,39 @@ public class IntegerList {
             }
         }
     }
+    
+    void sortDecreasing() {
+        int maxIndex;
+        for (int i = 0; i < list.length - 1; i++) {
+            //find biggest element in list starting at location i
+            maxIndex = i;
+            for (int j = i + 1; j < list.length; j++) {
+                if (list[j] > list[maxIndex]) {
+                    maxIndex = j;
+                }
+            }
+            //swap list[i] with biggest element
+            int temp = list[i];
+            list[i] = list[maxIndex];
+            list[maxIndex] = temp;
+        }
+    }
+    
+    int binarySearchD(int target)
+    {
+        int min=0, max=list.length-1, mid=0, loc=-1;
+        while (loc == -1 && min <= max)
+        {
+            mid = (min+max) / 2;
+            if (target == list[mid])
+                loc = mid;
+            else
+            if (target < list[mid])
+                max = mid-1;
+            else
+                min = mid+1;
+        }
+        
+        return loc;
+    }
 }

@@ -80,6 +80,9 @@ public class IntegerListTest {
                 newVal = scan.nextInt();
                 list.replaceAll(oldVal, newVal);
                 break;
+            case 7:
+                list.sortDecreasing();
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -97,7 +100,10 @@ public class IntegerListTest {
         System.out.println("3: Find an element in the list using linear search");
         System.out.println("4: Print the list");
         System.out.println("5: Replace a value");
-        System.out.println("6: Replace a value");
+        System.out.println("6: Replace all value");
+        System.out.println("7: Sort the list in descending order");
         System.out.print("\nEnter your choice: ");
     }
+    
+    
 }
