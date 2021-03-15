@@ -55,7 +55,7 @@ public class IntegerListTest {
                 list.selectionSort();
                 break;
             case 3:
-                System.out.print("Enter the value to look for: ");
+                System.out.println("Enter the value to look for: ");
                 loc = list.search(scan.nextInt());
                 if (loc != -1) {
                     System.out.println("Found at location " + loc);
@@ -67,16 +67,16 @@ public class IntegerListTest {
                 list.print();
                 break;
             case 5:
-                System.out.print("Enter the value to look for: ");
+                System.out.println("Enter the value to look for: ");
                 oldVal = scan.nextInt();
-                System.out.print("Enter the new value: ");
+                System.out.println("Enter the new value: ");
                 newVal = scan.nextInt();
                 list.replaceFirst(oldVal, newVal);
                 break;
             case 6:
-                System.out.print("Enter the value to look for: ");
+                System.out.println("Enter the value to look for: ");
                 oldVal = scan.nextInt();
-                System.out.print("Enter the new value: ");
+                System.out.println("Enter the new value: ");
                 newVal = scan.nextInt();
                 list.replaceAll(oldVal, newVal);
                 break;
@@ -84,7 +84,7 @@ public class IntegerListTest {
                 list.sortDecreasing();
                 break;
             case 8:
-                System.out.print("Enter the value to look for: ");
+                System.out.println("Enter the value to look for: ");
                 loc = list.binarySearchD(scan.nextInt());
                 if (loc != -1) {
                     System.out.println("Found at location " + loc);
@@ -112,7 +112,7 @@ public class IntegerListTest {
         System.out.println("6: Replace all value");
         System.out.println("7: Sort the list in descending order");
         System.out.println("8: Find an element in the list using binary search");
-        System.out.print("\nEnter your choice: ");
+        System.out.println("\nEnter your choice: ");
     }
     
     
