@@ -20,11 +20,17 @@ public class MathUtils {
 // Returns the factorial of the argument given
 //-------------------------------------------------------------
 
-    public static int factorial(int n) {
-        int fac = 1;
-        for (int i = n; i > 0; i--) {
-            fac *= i;
+    public static int factorial(int n) throws IllegalArgumentException {
+        if (n < 0) {
+            throw new IllegalArgumentException("The argument is a negative number.");
+        } else if (n > 16) {
+            throw new IllegalArgumentException("The argument is too big, it should be less than 17.");
+        } else {
+            int fac = 1;
+            for (int i = n; i > 0; i--) {
+                fac *= i;
+            }
+            return fac;
         }
-        return fac;
     }
 }
