@@ -44,11 +44,11 @@ public class Circle {
     // Creates a circle of a given size (diameter). Other
     // attributes are random (as described above)
     //---------------------------------------------------------
-    public Circle(int size) {
+    public Circle(int size, int heightOfSliderPanel) {
         radius = Math.abs(size / 2);
         color = new Color(Math.abs(generator.nextInt()) % 16777216);
         x = Math.abs(generator.nextInt()) % 600;
-        y = Math.abs(generator.nextInt()) % 400;
+        y = Math.abs(generator.nextInt()) % (400-heightOfSliderPanel);
     }
     
     //---------------------------------------------------------
