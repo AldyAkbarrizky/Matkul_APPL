@@ -32,29 +32,29 @@ public class Warning {
         String outputName = "warning.dat";
         try {
             // Set up scanner to input file
-            Scanner scan = new Scanner(new File(System.getProperty("user.dir") + "\\src\\main\\java\\CaseFour\\" + inputName));
+            Scanner scan = new Scanner(new File(System.getProperty("user.dir") + "\\src\\main\\java\\CaseFive\\" + inputName));
             // Set up the output file stream
-            PrintWriter outFile = new PrintWriter(new FileWriter(outputName));
+            PrintWriter outFile = new PrintWriter(new FileWriter(System.getProperty("user.dir") + "\\src\\main\\java\\CaseFive\\" + outputName));
             // Print a header to the output file
             outFile.println();
             outFile.println("Students on Academic Warning");
             outFile.println();
             // Process the input file, one token at a time
-            while (scan.hasNextLine()) {
+            while (scan.hasNext()) {
                 // Get the credit hours and quality points and
                 // determine if the student is on warning. If so,
                 // write the student data to the output file.
-                line = scan.nextLine();
-                String[] tmp = line.split(" ");
-                name = tmp[0];
-                creditHrs = Integer.valueOf(tmp[1]);
-                qualityPts = Double.valueOf(tmp[2]);
+                name = scan.next();
+                creditHrs = scan.nextInt();
+                qualityPts = scan.nextDouble();
                 gpa = qualityPts / creditHrs;
-                if ((gpa < 1.5 && creditHrs < 30) || (gpa < 1.75 && creditHrs < 60) || (gpa < 2 && creditHrs >= 60)) {
-                    outFile.println(name + ", " + creditHrs + ", " + gpa);
-                }
+                if ((gpa < 1.5 && creditHrs < 30) || (gpa < 1.75 && creditHrs < 60) || (gpa < 2.0 && creditHrs >= 60)) {
+                    outFile.print(name + ", " + creditHrs + ", " + gpa + "\n");
+                } 
             }
         // Close output file
+        outFile.close();
+        scan.close();
         } catch (FileNotFoundException exception) {
             System.out.println("The file " + inputName + " was not found.");
         } catch (IOException exception) {
