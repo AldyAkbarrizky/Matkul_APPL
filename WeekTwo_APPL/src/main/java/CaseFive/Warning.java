@@ -32,9 +32,11 @@ public class Warning {
         String outputName = "warning.dat";
         try {
             // Set up scanner to input file
-            Scanner scan = new Scanner(new File(System.getProperty("user.dir") + "\\src\\main\\java\\CaseFive\\" + inputName));
+            Scanner scan = new Scanner(new File(System.getProperty("user.dir") 
+                    + "\\src\\main\\java\\CaseFive\\" + inputName));
             // Set up the output file stream
-            PrintWriter outFile = new PrintWriter(new FileWriter(System.getProperty("user.dir") + "\\src\\main\\java\\CaseFive\\" + outputName));
+            PrintWriter outFile = new PrintWriter(new FileWriter(System.getProperty("user.dir") 
+                    + "\\src\\main\\java\\CaseFive\\" + outputName));
             // Print a header to the output file
             outFile.println();
             outFile.println("Students on Academic Warning");
@@ -48,13 +50,13 @@ public class Warning {
                 creditHrs = scan.nextInt();
                 qualityPts = scan.nextDouble();
                 gpa = qualityPts / creditHrs;
-                if ((gpa < 1.5 && creditHrs < 30) || (gpa < 1.75 && creditHrs < 60) || (gpa < 2.0 && creditHrs >= 60)) {
+                if ((gpa < 1.5 && creditHrs < 30) || (gpa < 1.75 && creditHrs < 60)
+                        || (gpa < 2.0 && creditHrs >= 60)) {
                     outFile.print(name + ", " + creditHrs + ", " + gpa + "\n");
                 } 
             }
         // Close output file
         outFile.close();
-        scan.close();
         } catch (FileNotFoundException exception) {
             System.out.println("The file " + inputName + " was not found.");
         } catch (IOException exception) {
